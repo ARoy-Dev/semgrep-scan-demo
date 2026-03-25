@@ -15,5 +15,5 @@ jobs:
       - name: chekout code
         uses: actions/checkout@v3
       - name: semgrep scan
-        run: semgrep scan --config=r/all
+        run: semgrep scan --config=auto
     
