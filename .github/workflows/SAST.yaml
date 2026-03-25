@@ -1,0 +1,19 @@
+name: SAST Test
+on: 
+  pull_request:
+    types: 
+      - opened
+    branches:
+      - main
+
+jobs:
+  sasttest:
+    runs-on: ubuntu-latest
+    container:
+      image: semgrep/semgrep
+    steps:
+      - name: chekout code
+        uses: actions/checkout@v3
+      - name: semgrep scan
+        run: semgrep scan --config=r/all
+    
